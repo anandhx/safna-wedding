@@ -3,13 +3,7 @@
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import confetti from "canvas-confetti";
 import { weddingData } from "@/data/wedding";
-import {
-  Play,
-  Volume2,
-  VolumeX,
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+import { Play, ArrowRight, Sparkles, Volume2, VolumeX } from "lucide-react";
 
 interface HeroVideoIntroProps {
   isActive: boolean;
@@ -89,7 +83,7 @@ export function HeroVideoIntro({
 
     setHasStartedPlaying(true);
     video.currentTime = 0;
-    video.muted = true; // Video's own entrance audio is removed/muted
+    video.muted = true;
 
     video
       .play()
@@ -100,17 +94,13 @@ export function HeroVideoIntro({
         setIsPlaying(false);
       });
 
-    // Start full landing page wedding song from first tap
     onStartMusic?.();
   };
 
-  // Screen tap handler
   const handleScreenClick = () => {
-    // If not started yet, any click/tap starts the video & wedding song
     if (!hasStartedPlaying) {
       startPlayback();
     }
-    // Once started, no pause allowed — plays continuously
   };
 
   // Auto-hide controls after inactivity
@@ -160,7 +150,6 @@ export function HeroVideoIntro({
         isFadingOut ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
-      {/* 100% Full-Screen Edge-to-Edge Video — Video muted, entrance song replaced by full wedding song */}
       <video
         ref={videoRef}
         src="/images/gemini_generated_video_03cf4159.mp4"
@@ -232,7 +221,6 @@ export function HeroVideoIntro({
             </div>
           </div>
 
-          {/* Bottom hint */}
           <div className="w-full text-center">
             <p className="text-[10px] sm:text-xs font-serif text-white/70 tracking-widest uppercase">
               Music will play · Touch anywhere on screen
@@ -241,10 +229,8 @@ export function HeroVideoIntro({
         </div>
       )}
 
-      {/* DURING PLAYBACK: Floating minimal overlays */}
       {hasStartedPlaying && (
         <>
-          {/* Top-Right Enter Suite Button */}
           <div
             className={`absolute top-4 right-4 sm:top-6 sm:right-6 z-30 transition-opacity duration-300 ${
               showControls ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -260,30 +246,25 @@ export function HeroVideoIntro({
             </button>
           </div>
 
-          {/* Bottom Floating Minimal Sound Control (controls wedding background music) */}
           <div
-            className={`absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-30 flex items-center justify-between text-white transition-opacity duration-300 ${
+            className={`absolute bottom-4 left-4 z-30 transition-opacity duration-300 ${
               showControls ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="flex items-center gap-2 bg-black/65 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-xl">
-              {/* Sound Toggle */}
-              <button
-                type="button"
-                onClick={toggleMute}
-                aria-label={isMusicPlaying ? "Mute music" : "Play music"}
-                className="p-1 rounded-full hover:bg-white/10 text-[#E5C365] transition-colors cursor-pointer"
-              >
-                {!isMusicPlaying ? (
-                  <VolumeX className="w-4 h-4 sm:w-5 sm:h-5 text-red-400" />
-                ) : (
-                  <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
-                )}
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={toggleMute}
+              aria-label={isMusicPlaying ? "Mute music" : "Play music"}
+              className="p-2.5 rounded-full bg-black/65 backdrop-blur-md border border-white/20 text-[#E5C365] hover:bg-black/85 transition-colors"
+            >
+              {isMusicPlaying ? (
+                <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
+              ) : (
+                <VolumeX className="w-4 h-4 sm:w-5 sm:h-5 text-red-400" />
+              )}
+            </button>
           </div>
 
-          {/* Slim Progress Line at bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-30">
             <div
               className="h-full bg-gradient-to-r from-[#B58B35] to-[#E5C365] transition-all duration-100"

@@ -21,12 +21,8 @@ export default function WeddingPage() {
 
     audio
       .play()
-      .then(() => {
-        setIsMusicPlaying(true);
-      })
-      .catch(() => {
-        setIsMusicPlaying(false);
-      });
+      .then(() => setIsMusicPlaying(true))
+      .catch(() => setIsMusicPlaying(false));
   };
 
   const handleToggleMusic = () => {
@@ -39,12 +35,8 @@ export default function WeddingPage() {
     } else {
       audio
         .play()
-        .then(() => {
-          setIsMusicPlaying(true);
-        })
-        .catch(() => {
-          setIsMusicPlaying(false);
-        });
+        .then(() => setIsMusicPlaying(true))
+        .catch(() => setIsMusicPlaying(false));
     }
   };
 
