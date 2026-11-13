@@ -117,7 +117,7 @@ export const weddingData: WeddingData = {
   dateSummary: "15 November 2026",
   islamicDateSummary: "Sunday · 11:30 AM – 12:00 PM",
   locationSummary: "Safa Convention Center, Thonnakkal Mangalapuram",
-  locationMapsUrl: "https://share.google/mFIgsQIpxDN6UbxX3",
+  locationMapsUrl: "https://maps.app.goo.gl/NfQDk9dcbgGTbRuD7",
   targetDateTimeISO: "2026-11-15T11:30:00+05:30",
   mainInvitationMessage: {
     heading: "Save Our Date",
@@ -143,7 +143,7 @@ export const weddingData: WeddingData = {
       city: "Thonnakkal",
       state: "Kerala",
       country: "India",
-      mapsSearchUrl: "https://share.google/mFIgsQIpxDN6UbxX3",
+      mapsSearchUrl: "https://maps.app.goo.gl/NfQDk9dcbgGTbRuD7",
       badge: "Save Our Date",
     },
   ],
