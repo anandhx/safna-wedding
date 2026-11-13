@@ -1,6 +1,7 @@
 import React from "react";
 import { weddingData } from "@/data/wedding";
 import { OrnamentalDivider } from "./OrnamentalDivider";
+import { MapPin } from "lucide-react";
 
 export function WelcomeSection() {
   return (
@@ -132,6 +133,16 @@ export function WelcomeSection() {
           >
             {weddingData.mainInvitationMessage.eventInviteArabic}
           </p>
+
+          <a
+            href={weddingData.locationMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#243A2D] hover:bg-[#18281F] text-[#F8F3E8] font-serif text-xs sm:text-sm uppercase tracking-wider font-semibold shadow-md transition-all hover:scale-105"
+          >
+            <MapPin className="w-4 h-4 text-[#E5C365]" />
+            <span>Get Directions</span>
+          </a>
 
           <OrnamentalDivider variant="gold" symbol="floral" className="my-8" />
 
