@@ -45,31 +45,31 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://ameenuddin-weds-madeeha.wedding"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://safna-afras.wedding"
   ),
-  title: "Madeeha Nikhat & Mohammed Ameenuddin Ashrafi — Wedding Invitation",
+  title: "Safna S & Afras Ahammed MS — Save Our Date",
   description:
-    "A wedding invitation for the Mehfil-e-Nikah on 18 October 2026 and Dawat-e-Valima on 19 October 2026 in Ballari, Karnataka.",
+    "Save Our Date — Sunday, 15 November 2026, 11:30 AM–12:00 PM at Safa Convention Center, Thonnakkal Mangalapuram.",
   openGraph: {
-    title: "Madeeha Nikhat & Mohammed Ameenuddin Ashrafi — Wedding Invitation",
+    title: "Safna S & Afras Ahammed MS — Save Our Date",
     description:
-      "A wedding invitation for the Mehfil-e-Nikah on 18 October 2026 and Dawat-e-Valima on 19 October 2026 in Ballari, Karnataka.",
+      "With the blessings and prayers in our hearts, we joyfully invite you to witness the blessed union of two souls destined to be one.",
     images: [
       {
-        url: "/images/wedding-artwork.png",
+        url: "/images/invitation-card.jpg",
         width: 1200,
-        height: 800,
-        alt: "Wedding Invitation - Madeeha Nikhat & Mohammed Ameenuddin Ashrafi",
+        height: 1600,
+        alt: "Wedding Invitation - Safna S & Afras Ahammed MS",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Madeeha Nikhat & Mohammed Ameenuddin Ashrafi — Wedding Invitation",
+    title: "Safna S & Afras Ahammed MS — Save Our Date",
     description:
-      "Mehfil-e-Nikah: 18 October 2026 | Dawat-e-Valima: 19 October 2026 | Ballari, Karnataka",
-    images: ["/images/wedding-artwork.png"],
+      "15 November 2026 · 11:30 AM–12:00 PM · Safa Convention Center, Thonnakkal Mangalapuram",
+    images: ["/images/invitation-card.jpg"],
   },
   icons: {
     icon: "/favicon.ico",

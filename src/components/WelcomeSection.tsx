@@ -31,16 +31,35 @@ export function WelcomeSection() {
             </p>
           </div>
 
+          {/* Qur'an verse matching the "two souls" invitation theme */}
+          <div className="mb-6 max-w-2xl mx-auto">
+            <p
+              className="font-arabic text-[#243A2D] text-lg sm:text-xl md:text-2xl leading-relaxed"
+              dir="rtl"
+            >
+              {weddingData.quranVerseArabic}
+            </p>
+            <p className="font-serif italic text-xs sm:text-sm text-[#9DA78B] mt-2">
+              {weddingData.quranVerseEnglish}
+            </p>
+          </div>
+
           <OrnamentalDivider variant="gold" symbol="diamond" className="my-6" />
 
           {/* Royal Heading */}
-          <div className="inline-block px-6 py-1.5 rounded-full bg-[#B58B35]/10 border border-[#B58B35]/30 mb-8">
+          <div className="inline-block px-6 py-1.5 rounded-full bg-[#B58B35]/10 border border-[#B58B35]/30 mb-4">
             <span className="font-serif uppercase tracking-[0.25em] text-[#B58B35] text-xs sm:text-sm font-semibold">
               {weddingData.mainInvitationMessage.heading}
             </span>
           </div>
+          <p
+            className="font-arabic text-[#B58B35] text-2xl sm:text-3xl mb-8"
+            dir="rtl"
+          >
+            {weddingData.mainInvitationMessage.headingArabic}
+          </p>
 
-          {/* Host / Grandmother's Invitation Line */}
+          {/* Invitation — English + Arabic for Safna & Afras */}
           <div className="max-w-2xl mx-auto space-y-4">
             <h3 className="font-display text-2xl sm:text-3xl text-[#243A2D] font-bold tracking-tight">
               {weddingData.mainInvitationMessage.invitationBy}
@@ -48,6 +67,13 @@ export function WelcomeSection() {
 
             <p className="font-serif text-base sm:text-lg text-[#5E5A4F] leading-relaxed">
               {weddingData.mainInvitationMessage.body}
+            </p>
+
+            <p
+              className="font-arabic text-[#243A2D] text-lg sm:text-xl leading-relaxed"
+              dir="rtl"
+            >
+              {weddingData.invitationArabic}
             </p>
           </div>
 
@@ -60,9 +86,14 @@ export function WelcomeSection() {
               <p className="font-display text-2xl sm:text-3xl font-bold text-[#243A2D]">
                 {weddingData.bride.fullName}
               </p>
-              <p className="font-serif text-xs sm:text-sm text-[#B58B35] font-semibold">
-                {weddingData.bride.qualifications}
+              <p className="font-arabic text-[#B58B35] text-xl" dir="rtl">
+                {weddingData.bride.arabicName}
               </p>
+              {weddingData.bride.qualifications ? (
+                <p className="font-serif text-xs sm:text-sm text-[#B58B35] font-semibold">
+                  {weddingData.bride.qualifications}
+                </p>
+              ) : null}
             </div>
 
             <div className="my-3 flex items-center justify-center gap-3">
@@ -80,15 +111,26 @@ export function WelcomeSection() {
               <p className="font-display text-2xl sm:text-3xl font-bold text-[#243A2D]">
                 {weddingData.groom.fullName}
               </p>
-              <p className="font-serif text-xs sm:text-sm text-[#B58B35] font-semibold">
-                {weddingData.groom.qualifications}
+              <p className="font-arabic text-[#B58B35] text-xl" dir="rtl">
+                {weddingData.groom.arabicName}
               </p>
+              {weddingData.groom.qualifications ? (
+                <p className="font-serif text-xs sm:text-sm text-[#B58B35] font-semibold">
+                  {weddingData.groom.qualifications}
+                </p>
+              ) : null}
             </div>
           </div>
 
           {/* Invitation Call to Events */}
           <p className="font-serif text-base sm:text-lg text-[#243A2D] font-medium max-w-2xl mx-auto leading-relaxed">
             {weddingData.mainInvitationMessage.eventInvite}
+          </p>
+          <p
+            className="font-arabic text-[#5E5A4F] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mt-3"
+            dir="rtl"
+          >
+            {weddingData.mainInvitationMessage.eventInviteArabic}
           </p>
 
           <OrnamentalDivider variant="gold" symbol="floral" className="my-8" />

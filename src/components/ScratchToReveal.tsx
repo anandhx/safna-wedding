@@ -291,7 +291,7 @@ export function ScratchToReveal() {
 
                 {/* Bride's Name */}
                 <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#1E3025] tracking-tight leading-none">
-                  Madeeha
+                  {weddingData.bride.shortName}
                 </h3>
 
                 {/* Elegant Ampersand Divider */}
@@ -303,12 +303,12 @@ export function ScratchToReveal() {
 
                 {/* Groom's Name */}
                 <h4 className="font-display text-2xl sm:text-3xl font-bold text-[#1E3025] tracking-tight leading-none">
-                  Ameenuddin
+                  {weddingData.groom.shortName}
                 </h4>
 
                 {/* Dates & City */}
                 <p className="font-serif text-[11px] sm:text-xs text-[#554C3E] mt-3 font-medium tracking-wide">
-                  18 &amp; 19 October 2026 · Ballari
+                  {weddingData.dateSummary} · Thonnakkal
                 </p>
               </div>
             </div>
@@ -347,7 +347,9 @@ export function ScratchToReveal() {
             <div className="flex flex-col items-center gap-2 animate-fade-in">
               <div className="inline-flex items-center gap-2 text-xs font-serif font-bold text-[#1E3025] bg-[#E8DEC8] px-4 py-1.5 rounded-full border border-[#B58B35]/60 shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#B58B35]" />
-                <span>Madeeha &amp; Ameenuddin</span>
+                <span>
+                  {weddingData.bride.shortName} &amp; {weddingData.groom.shortName}
+                </span>
               </div>
               <button
                 type="button"

@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { weddingData } from "@/data/wedding";
 import { OrnamentalDivider } from "./OrnamentalDivider";
-import { Calendar, MapPin, Sparkles, ChevronDown, Play } from "lucide-react";
+import { WeddingCountdown } from "./WeddingCountdown";
+import { ChevronDown } from "lucide-react";
 
 interface WeddingHeroProps {
   onOpenVideo?: () => void;
@@ -41,9 +42,15 @@ export function WeddingHero({ onOpenVideo }: WeddingHeroProps) {
           {weddingData.bismillahArabic}
         </p>
 
-        {/* Welcome Blessing Intro */}
-        <p className="font-serif italic text-sm sm:text-base text-[#5E5A4F] max-w-md mx-auto mb-3">
-          By the blessings of Allah, we invite you to celebrate with us
+        {/* Arabic Save Our Date + invitation matching Safna's card */}
+        <p
+          className="font-arabic text-[#B58B35] text-xl sm:text-2xl leading-relaxed mb-1"
+          dir="rtl"
+        >
+          {weddingData.mainInvitationMessage.headingArabic}
+        </p>
+        <p className="font-serif italic text-sm sm:text-base text-[#5E5A4F] max-w-lg mx-auto mb-3">
+          {weddingData.mainInvitationMessage.body}
         </p>
 
         <OrnamentalDivider variant="gold" symbol="floral" className="my-1" />
@@ -53,6 +60,9 @@ export function WeddingHero({ onOpenVideo }: WeddingHeroProps) {
           <h1 className="font-display text-3xl sm:text-5xl md:text-6xl text-[#243A2D] font-bold tracking-tight">
             {weddingData.bride.fullName}
           </h1>
+          <p className="font-arabic text-[#B58B35] text-xl sm:text-2xl" dir="rtl">
+            {weddingData.bride.arabicName}
+          </p>
 
           <div className="flex items-center justify-center gap-3">
             <div className="h-[1px] w-12 sm:w-16 bg-[#B58B35]/50" />
@@ -65,65 +75,34 @@ export function WeddingHero({ onOpenVideo }: WeddingHeroProps) {
           <h2 className="font-display text-3xl sm:text-5xl md:text-6xl text-[#243A2D] font-bold tracking-tight">
             {weddingData.groom.fullName}
           </h2>
+          <p className="font-arabic text-[#B58B35] text-xl sm:text-2xl" dir="rtl">
+            {weddingData.groom.arabicName}
+          </p>
         </div>
 
         {/* Wedding Artwork Presentation Card */}
-        <div className="my-8 relative group max-w-md sm:max-w-lg w-full">
-          {/* Ornate Gold Outer Arch Frame */}
+        <div className="my-6 relative group max-w-sm sm:max-w-md w-full">
           <div className="relative rounded-3xl p-2 sm:p-3 bg-gradient-to-b from-[#E5C365]/30 via-[#B58B35]/20 to-[#243A2D]/10 shadow-2xl">
-            <div className="relative rounded-2xl overflow-hidden border border-[#B58B35]/50 bg-white aspect-[3/2] shadow-inner">
+            <div className="relative rounded-2xl overflow-hidden border border-[#B58B35]/50 bg-white aspect-[3/4] max-h-[420px] mx-auto shadow-inner">
               <Image
-                src="/images/wedding-artwork.png"
-                alt="Madeeha Nikhat & Mohammed Ameenuddin Ashrafi Illustrated Wedding Artwork"
+                src="/images/invitation-card.jpg"
+                alt="Safna S & Afras Ahammed MS Save Our Date invitation card"
                 fill
                 priority
                 sizes="(max-width: 640px) 90vw, (max-width: 1024px) 500px, 600px"
                 className="object-contain object-center transform group-hover:scale-102 transition-transform duration-700"
               />
             </div>
-            {/* Fine Caption Tag */}
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#243A2D] text-[#E5C365] border border-[#B58B35] shadow-md text-[11px] font-serif uppercase tracking-widest whitespace-nowrap">
-              Celebration of Love · SBT Family
+              Save Our Date · Safna &amp; Afras
             </div>
           </div>
         </div>
 
-        {/* Date, Islamic Date & Location Badges */}
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-[#B58B35]/30 shadow-xs text-xs sm:text-sm font-serif text-[#243A2D]">
-            <Calendar className="w-4 h-4 text-[#B58B35]" />
-            <span className="font-semibold">{weddingData.dateSummary}</span>
-            <span className="text-[#9DA78B]">|</span>
-            <span className="text-[#5E5A4F]">{weddingData.islamicDateSummary}</span>
-          </div>
+        {/* Main highlight: countdown under the card */}
+        <WeddingCountdown variant="hero" />
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-[#B58B35]/30 shadow-xs text-xs sm:text-sm font-serif text-[#243A2D]">
-            <MapPin className="w-4 h-4 text-[#B58B35]" />
-            <span className="font-semibold">{weddingData.locationSummary}</span>
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
-          <a
-            href="#celebrations"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#243A2D] hover:bg-[#18281F] text-[#F8F3E8] font-serif font-medium text-xs sm:text-sm tracking-wider uppercase shadow-md hover:shadow-lg transition-all duration-300 hover:scale-103"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-[#E5C365]" />
-            <span>Event Celebrations</span>
-          </a>
-
-          <a
-            href="#venue"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent hover:bg-[#B58B35]/10 text-[#243A2D] border border-[#B58B35] font-serif font-medium text-xs sm:text-sm tracking-wider uppercase transition-all duration-300"
-          >
-            <MapPin className="w-3.5 h-3.5 text-[#B58B35]" />
-            <span>Venue &amp; Directions</span>
-          </a>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="mt-12 flex flex-col items-center animate-bounce opacity-70">
+        <div className="mt-10 flex flex-col items-center animate-bounce opacity-70">
           <span className="text-[10px] font-serif uppercase tracking-widest text-[#B58B35]">
             Scroll to Invitation
           </span>

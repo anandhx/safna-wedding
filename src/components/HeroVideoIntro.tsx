@@ -207,8 +207,14 @@ export function HeroVideoIntro({
             <h1 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight drop-shadow-md">
               {weddingData.bride.shortName} &amp; {weddingData.groom.shortName}
             </h1>
+            <p
+              className="font-arabic text-[#E5C365] text-lg sm:text-xl mt-1"
+              dir="rtl"
+            >
+              {weddingData.bride.arabicName} و {weddingData.groom.arabicName}
+            </p>
             <p className="font-serif text-xs uppercase tracking-widest text-[#E5C365] mt-1 mb-6">
-              Wedding Invitation
+              {weddingData.mainInvitationMessage.heading}
             </p>
 
             {/* Pulsing Gold Play Button */}

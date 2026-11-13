@@ -39,13 +39,18 @@ export interface GalleryItem {
 export interface WeddingData {
   bismillahArabic: string;
   bismillahEnglish: string;
+  quranVerseArabic: string;
+  quranVerseEnglish: string;
+  invitationArabic: string;
   bride: {
     fullName: string;
+    arabicName: string;
     qualifications: string;
     shortName: string;
   };
   groom: {
     fullName: string;
+    arabicName: string;
     qualifications: string;
     shortName: string;
   };
@@ -53,12 +58,14 @@ export interface WeddingData {
   dateSummary: string;
   islamicDateSummary: string;
   locationSummary: string;
-  targetDateTimeISO: string; // Nikah target in IST: 2026-10-18T12:30:00+05:30
+  targetDateTimeISO: string;
   mainInvitationMessage: {
     heading: string;
+    headingArabic: string;
     invitationBy: string;
     body: string;
     eventInvite: string;
+    eventInviteArabic: string;
   };
   events: WeddingEvent[];
   families: {
@@ -87,125 +94,109 @@ export interface WeddingData {
 export const weddingData: WeddingData = {
   bismillahArabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
   bismillahEnglish: "In the name of Allah, the Most Beneficent, the Most Merciful",
+  quranVerseArabic:
+    "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+  quranVerseEnglish:
+    "And among His signs is that He created for you spouses from among yourselves so that you may find tranquility in them; and He placed between you affection and mercy. (Qur’an 30:21)",
+  invitationArabic:
+    "بِبَرَكَاتٍ وَدَعَوَاتٍ فِي قُلُوبِنَا، نَدْعُوكُمْ بِكُلِّ فَرَحٍ لِتَشْهَدُوا الِاتِّحَادَ الْمُبَارَكَ لِرُوحَيْنِ قُدِّرَ لَهُمَا أَنْ يَكُونَا وَاحِدًا — صَفْنَا وَأَفْرَاس أَحْمَد",
   bride: {
-    fullName: "Madeeha Nikhat",
-    qualifications: "M.Sc., B.Ed.",
-    shortName: "Madeeha",
+    fullName: "Safna S",
+    arabicName: "صَفْنَا",
+    qualifications: "",
+    shortName: "Safna",
   },
   groom: {
-    fullName: "Mohammed Ameenuddin Ashrafi",
-    qualifications: "B.Com., C.A.",
-    shortName: "Ameenuddin",
+    fullName: "Afras Ahammed MS",
+    arabicName: "أَفْرَاس أَحْمَد",
+    qualifications: "",
+    shortName: "Afras",
   },
-  monogram: "A & M",
-  dateSummary: "18 October 2026",
-  islamicDateSummary: "6th Jamadi-ul-Awwal 1448 Hijri",
-  locationSummary: "Ballari, Karnataka",
-  targetDateTimeISO: "2026-10-18T12:30:00+05:30",
+  monogram: "SA",
+  dateSummary: "15 November 2026",
+  islamicDateSummary: "Sunday · 11:30 AM – 12:00 PM",
+  locationSummary: "Safa Convention Center, Thonnakkal Mangalapuram",
+  targetDateTimeISO: "2026-11-15T11:30:00+05:30",
   mainInvitationMessage: {
-    heading: "Wedding Invitation",
-    invitationBy: "Mrs. Late Mohammed Ghouse Sab.",
-    body: "cordially solicits your gracious presence and blessings on the auspicious occasion of the marriage of her granddaughter, Madeeha Nikhat, with Mohammed Ameenuddin Ashrafi.",
-    eventInvite: "With the blessings of Allah and our families, we invite you to join us for the Mehfil-e-Nikah and Dawat-e-Valima.",
+    heading: "Save Our Date",
+    headingArabic: "احْفَظُوا تَارِيخَنَا",
+    invitationBy: "With blessings & prayers",
+    body: "With the blessings and prayers in our hearts, we joyfully invite you to witness the blessed union of two souls destined to be one.",
+    eventInvite:
+      "Join us on Sunday, 15 November 2026, between 11:30 AM and 12:00 PM at Safa Convention Center, Thonnakkal Mangalapuram.",
+    eventInviteArabic:
+      "نَدْعُوكُمْ يَوْمَ الْأَحَدِ ١٥ نُوفَمْبِر ٢٠٢٦ مِنَ السَّاعَةِ ١١:٣٠ صَبَاحًا إِلَى ١٢:٠٠ ظُهْرًا فِي مَرْكَزِ صَفَا لِلْمُؤْتَمَرَاتِ، ثُونَاكَّال مَنْغَلَابُورَم",
   },
   events: [
     {
-      id: "nikah",
-      name: "Mehfil-e-Nikah",
-      subTitle: "The Sacred Marriage Ceremony",
-      date: "Sunday, 18 October 2026",
-      dateISO: "2026-10-18",
-      islamicDate: "6th Jamadi-ul-Awwal 1448 Hijri (Inshallaha)",
-      time: "12:30 PM",
-      lunchDetail: "Lunch: Thereafter",
-      venue: "M.R.K Function Hall",
-      address: "Near ITI College, Cantonment",
-      city: "Ballari",
-      state: "Karnataka",
+      id: "wedding",
+      name: "Wedding Ceremony",
+      subTitle: "The Blessed Union",
+      date: "Sunday, 15 November 2026",
+      dateISO: "2026-11-15",
+      islamicDate: "",
+      time: "Between 11:30 AM and 12:00 PM",
+      venue: "Safa Convention Center",
+      address: "Thonnakkal Mangalapuram",
+      city: "Thonnakkal",
+      state: "Kerala",
       country: "India",
       mapsSearchUrl:
-        "https://www.google.com/maps/search/?api=1&query=M.R.K+Function+Hall+Near+ITI+College+Cantonment+Ballari+Karnataka+India",
-      badge: "Nikah Ceremony",
-    },
-    {
-      id: "valima",
-      name: "Dawat-e-Valima",
-      subTitle: "The Joyful Reception",
-      date: "Monday, 19 October 2026",
-      dateISO: "2026-10-19",
-      islamicDate: "7th Jamadi-ul-Awwal 1448 Hijri",
-      time: "1:30 PM",
-      venue: "Karnataka Function Hall",
-      address: "4th Railway Gate, Hospet Road, Cantonment",
-      city: "Ballari",
-      state: "Karnataka",
-      country: "India",
-      mapsSearchUrl:
-        "https://www.google.com/maps/search/?api=1&query=Karnataka+Function+Hall+4th+Railway+Gate+Hospet+Road+Cantonment+Ballari+Karnataka+India",
-      badge: "Valima Reception",
+        "https://www.google.com/maps/search/?api=1&query=Safa+Convention+Center+Thonnakkal+Mangalapuram",
+      badge: "Save Our Date",
     },
   ],
   families: {
     bride: {
       side: "bride",
       title: "Bride's Family",
-      candidateName: "Madeeha Nikhat",
-      qualifications: "M.Sc., B.Ed.",
-      relationshipTitle: "Granddaughter of Late Mohammed Ghouse Sab.",
-      fatherInfo: "Daughter of Imtiaz (Lorry Owner, Ballari)",
-      additionalInfo: "Grand youngest daughter of the family",
-      issuedBy: "Invitation cordially extended by Mrs. Late Mohammed Ghouse Sab.",
+      candidateName: "Safna S",
+      qualifications: "",
+      relationshipTitle: "",
+      fatherInfo: "",
+      additionalInfo: "",
     },
     groom: {
       side: "groom",
       title: "Groom's Family",
-      candidateName: "Mohammed Ameenuddin Ashrafi",
-      qualifications: "B.Com., C.A.",
-      relationshipTitle: "Son of Alhaj Shamsfuddin Ashrafi",
-      fatherInfo: "Retired Sorting Postman, Head Post Office, Ballari",
-      additionalInfo: "Residing in Ballari, Karnataka",
+      candidateName: "Afras Ahammed MS",
+      qualifications: "",
+      relationshipTitle: "",
+      fatherInfo: "",
+      additionalInfo: "",
     },
   },
   closing: {
     title: "With Heartfelt Gratitude & Duas",
-    duaArabic: "بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ",
+    duaArabic:
+      "بَارَكَ اللَّهُ لِصَفْنَا وَأَفْرَاس، وَبَارَكَ عَلَيْهِمَا، وَجَمَعَ بَيْنَهُمَا فِي خَيْرٍ",
     duaTranslation:
-      "“May Allah bless you, shower His blessings upon you, and unite you both in goodness.”",
+      "“May Allah bless Safna and Afras, shower His blessings upon them, and unite them both in goodness.”",
     message:
-      "Thank you for being part of our celebration. Your presence and duas mean so much to our families. May Allah bless this union with love, mercy, peace, and barakah.",
+      "Thank you for being part of Safna & Afras’s celebration. Your presence and duas mean so much to our families. May Allah bless this union with love, mercy, peace, and barakah.",
     compliments: "With best compliments from Relatives & Friends",
-    sbtFamilyCompliments: "With Best Compliments: SBT Family",
+    sbtFamilyCompliments: "Safna & Afras",
   },
   shareDetails: {
-    title: "Wedding Invitation — Madeeha Nikhat & Mohammed Ameenuddin Ashrafi",
+    title: "Wedding Invitation — Safna S & Afras Ahammed MS",
     messageText:
-      "Wedding Invitation — Madeeha Nikhat & Mohammed Ameenuddin Ashrafi\n\nMehfil-e-Nikah: 18 October 2026 at 12:30 PM, M.R.K Function Hall, near ITI College, Cantonment, Ballari.\n\nDawat-e-Valima: 19 October 2026 at 1:30 PM, Karnataka Function Hall, 4th Railway Gate, Hospet Road, Cantonment, Ballari.\n\nWe warmly invite you to join us and bless the couple.",
+      "Save Our Date — Safna S & Afras Ahammed MS\n\nSunday, 15 November 2026\nBetween 11:30 AM and 12:00 PM\nSafa Convention Center, Thonnakkal Mangalapuram\n\nWith the blessings and prayers in our hearts, we joyfully invite you to witness the blessed union of two souls destined to be one.",
   },
   qrCode: {
-    imageSrc: "/images/invitation-qr.png",
-    title: "Digital Invitation QR Code",
-    caption:
-      "Supplied wedding invitation QR code. Scan with your camera or QR reader to view.",
+    imageSrc: "/images/invitation-card.jpg",
+    title: "Wedding Invitation Card",
+    caption: "Scan the QR on the invitation card for details and directions.",
   },
 };
 
 export const galleryItems: GalleryItem[] = [
   {
-    id: "wedding-artwork",
-    title: "Wedding Floral Artwork",
+    id: "invitation-card",
+    title: "Save Our Date Card",
     caption:
-      "Commemorative illustrated wedding artwork of Ameenuddin & Madeeha with pink floral wreath and royal crest.",
-    src: "/images/wedding-artwork.png",
-    alt: "Ameenuddin weds Madeeha illustrated wedding artwork",
-    tag: "Artwork",
-  },
-  {
-    id: "printed-invitation",
-    title: "Official Printed Invitation",
-    caption:
-      "The physical wedding invitation card featuring laser-cut SBT Family filigree cover and royal ivory insert.",
-    src: "/images/printed-invitation.jpg",
-    alt: "Photograph of physical printed wedding invitation card",
-    tag: "Physical Card",
+      "Official Save Our Date invitation for Safna S & Afras Ahammed MS.",
+    src: "/images/invitation-card.jpg",
+    alt: "Safna S & Afras Ahammed MS Save Our Date wedding invitation card",
+    tag: "Invitation",
   },
 ];
