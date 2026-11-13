@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { weddingData } from "@/data/wedding";
-import { Clock, Heart, MapPin } from "lucide-react";
+import { Clock, Heart } from "lucide-react";
+import { LocationBeacon } from "./LocationBeacon";
 
 interface WeddingCountdownProps {
   variant?: "hero" | "section";
@@ -103,15 +104,7 @@ export function WeddingCountdown({ variant = "hero" }: WeddingCountdownProps) {
           <p className="font-serif italic text-sm sm:text-base text-[#E5C365]/90 max-w-lg mx-auto mb-2">
             {weddingData.dateSummary} · {weddingData.islamicDateSummary}
           </p>
-          <a
-            href={weddingData.locationMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 font-serif text-xs sm:text-sm text-[#E5C365] hover:text-[#F8F3E8] max-w-lg mx-auto mb-6 underline underline-offset-4 decoration-[#B58B35]/50 transition-colors"
-          >
-            <MapPin className="w-3.5 h-3.5 shrink-0" />
-            <span>{weddingData.locationSummary}</span>
-          </a>
+          <LocationBeacon variant="dark" className="mb-6" />
 
           {timeLeft?.isExpired ? (
             <div className="my-4 p-5 sm:p-6 rounded-2xl bg-[#243A2D] border border-[#B58B35] max-w-lg mx-auto">
